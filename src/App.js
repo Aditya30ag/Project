@@ -1,24 +1,83 @@
-import logo from './logo.svg';
 import './App.css';
+import { createBrowserRouter,RouterProvider} from "react-router-dom";
+import Navbar from './components/Navbar';
+import Login from './components/Login';
+import Signup from './components/Signup';
+import { useState } from 'react';
+import LoadingBar from 'react-top-loading-bar';
 
 function App() {
+  const [progress,setprogress]=useState(0);
+
+  const showalert=()=>{
+    setTimeout(()=>{
+      setprogress(20);
+    },100)
+    setTimeout(()=>{
+      setprogress(40);
+    },200)
+    setTimeout(()=>{
+      setprogress(60);
+    },300)
+    setTimeout(()=>{
+      setprogress(80);
+    },400)
+    setTimeout(()=>{
+      setprogress(100);
+    },500)
+  }
+  const handleonClick2=()=>{
+    showalert();
+  }
+  const router=createBrowserRouter([
+    {
+      path:"/",
+      element:<><Navbar showalert={showalert} handleonClick2={handleonClick2}/><LoadingBar
+      color='black'
+      progress={progress}
+      /></>
+    },
+    {
+      path:"/about",
+      element:<><Navbar showalert={showalert} handleonClick2={handleonClick2}/><LoadingBar
+      color='black'
+      progress={progress}
+      /></>
+    },
+    {
+      path:"/services",
+      element:<><Navbar showalert={showalert} handleonClick2={handleonClick2}/><LoadingBar
+      color='black'
+      progress={progress}
+      /></>
+    },
+    {
+      path:"/contactus",
+      element:<><Navbar showalert={showalert} handleonClick2={handleonClick2}/><LoadingBar
+      color='black'
+      progress={progress}
+      /></>
+    },
+    {
+      path:"/login",
+      element:<><Navbar showalert={showalert} handleonClick2={handleonClick2}/><LoadingBar
+      color='black'
+      progress={progress}
+      /><Login/></>
+    },
+    {
+      path:"/signup",
+      element:<><Navbar showalert={showalert} handleonClick2={handleonClick2}/><LoadingBar
+      color='black'
+      progress={progress}
+      /><Signup/></>
+    }
+  ])
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <RouterProvider router={router}/>
+    </>
   );
 }
 
