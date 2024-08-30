@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.p{
+
+}
+.p:hover{
+  color:rgb(5, 161, 44);
+}
+.camera:hover{
+  background-color:rgb(203, 239, 239);
+  
+}
+.welcomebtn:hover{
+  background-color:rgb(184, 213, 213);
+}
+.linear{
+  
+}

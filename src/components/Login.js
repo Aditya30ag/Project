@@ -41,25 +41,26 @@ export default function Login(props) {
     }
   };
   return (
-    <div className="container">
-      <h1 style={{ marginTop: "80px", marginLeft: "32%" }}>
-        Login into a Account
-      </h1>
+    <div className="container" style={{width:"100%",display:"flex",justifyContent:"center",alignItems:"center",marginTop:"150px",position:"fixed",left:"128px",zIndex:"10"}}>
       <div
         className="container"
         style={{
           marginTop: "20px",
           width: "500px",
-          height: "420px",
-          border: "2px solid black",
+          height: "400px",
+          border: "2px solid #EAEAEA",
           boxSizing: "border-box",
           paddingTop: "40px",
-          borderRadius: "4px",
+          borderRadius: "12px",
           boxShadow: "0px 10px 25px #000",
+          fontWeight:"700",
+          backgroundColor:"whitesmoke",//#E4F1E8
+          opacity:"0.8",
         }}
       >
         <form onSubmit={handleonClick} style={{ columnGap: "20px" }}>
-          <div className="mb-3">
+          <div>
+            <h2 style={{marginLeft:"5px"}}>Login into a account<img style={{height:"50px",borderRadius:"50%",marginLeft:"80px"}} src="/logo.jpg" alt="Description" /></h2>
             <label htmlFor="exampleInputEmail1" className="form-label">
               Email address
             </label>
@@ -93,16 +94,6 @@ export default function Login(props) {
             />
             <p style={{ color: "red" }}>{content}</p>
           </div>
-          <div className="mb-3 form-check">
-            <input
-              type="checkbox"
-              className="form-check-input"
-              id="exampleCheck1"
-            />
-            <label className="form-check-label" htmlFor="exampleCheck1">
-              Check me out
-            </label>
-          </div>
           <button
             type="submit"
             className="btn btn-primary"
@@ -111,7 +102,7 @@ export default function Login(props) {
             Login
           </button>
           <Link to="/signup" style={{ textDecoration: "none" }}>
-            <p onClick={props.handleonClick2}> Don't have an account..SignUp</p>
+            <p onClick={props.handleonClick2} > Don't have an account..SignUp</p>
           </Link>
         </form>
       </div>

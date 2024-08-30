@@ -4,7 +4,11 @@ import { Link, useNavigate } from "react-router-dom";
 export default function Signup(props) {
   const [credentials, setcredential] = useState({
     name: "",
+    name1: "",
     email: "",
+    number: "",
+    aadharnumber: "",
+    cropsname: "",
     password: "",
   });
   const [content, setcontent] = useState("");
@@ -20,7 +24,11 @@ export default function Signup(props) {
       },
       body: JSON.stringify({
         name: credentials.name,
+        name1: credentials.name1,
         email: credentials.email,
+        number: credentials.number,
+        aadharnumber: credentials.aadharnumber,
+        cropsname: credentials.cropsname,
         password: credentials.password,
       }),
     });
@@ -43,39 +51,66 @@ export default function Signup(props) {
   };
   return (
     <>
-    <div className="container">
-    <h1 style={{marginTop:"80px",marginLeft:"30%"}}>Create a new Account</h1>
+    <div className="container" style={{display:"flex",justifyContent:"center",alignItems:"cenetr",marginTop:"80px",marginBottom:"40px",position:"fixed",left:"128px",zIndex:"10"}}>
     <div
       className="container"
       style={{
-        marginTop: "20px",
+        marginTop: "0px",
         width: "500px",
-        height: "480px",
-        border: "2px solid black",
+        height: "550px",
+        border: "2px solid #EAEAEA",
         boxSizing: "border-box",
         paddingTop: "0px",
-        borderRadius: "4px",
-        boxShadow: "0px 10px 25px #000"
+        borderRadius: "12px",
+        boxShadow: "0px 10px 25px #000",
+        zIndex:"1",
+        backgroundColor:"whitesmoke",//#E4F1E8
+          opacity:"0.8",
+        fontSize:"15px",
+        fontWeight:"700",
+        display:"flex",
+        flexDirection:"column",
       }}
     >
       <form onSubmit={handleonClick}>
         <div
-          className="mb-3 my-4"
+          className="mb-1 my-3"
         >
-          <label htmlFor="name" className="form-label">
-            Name
-          </label>
-          <input
-            type="name"
-            className="form-control"
-            id="name"
-            aria-describedby="emailHelp"
-            name="name"
-            value={credentials.name}
-            onChange={onchange}
-          />
+          <div>
+          <h2>Create an account <img style={{height:"50px",borderRadius:"50%",marginLeft:"140px"}} src="/logo.jpg" alt="Description" /></h2>
+          </div>
+          <div className="mb-1" style={{display:"flex",justifyContent:"space-between"}}>
+            <div>
+              <label htmlFor="name" className="form-label">
+                FirstName
+              </label>
+              <input
+                type="name"
+                className="form-control"
+                id="name"
+                aria-describedby="emailHelp"
+                name="name"
+                value={credentials.name}
+                onChange={onchange}
+              />
+            </div>
+            <div>
+              <label htmlFor="name1" className="form-label">
+                LastName
+              </label>
+              <input
+                type="name1"
+                className="form-control"
+                id="name1"
+                aria-describedby="emailHelp"
+                name="name1"
+                value={credentials.name1}
+                onChange={onchange}
+              />
+            </div>
+          </div>
         </div>
-        <div className="mb-3 my-4">
+        <div className="mb-2">
           <label htmlFor="exampleInputEmail1" className="form-label">
             Email address
           </label>
@@ -89,11 +124,49 @@ export default function Signup(props) {
             onChange={onchange}
           />
           <p style={{color:"red",marginTop:"5px",marginLeft:"2px"}}>{content}</p>
-          <div id="emailHelp" className="form-text" style={{color:"#E8C5F0"}}>
-            We'll never share your email with anyone else.
+        </div>
+        <div className="mb-1" style={{display:"flex",justifyContent:"space-between"}}>
+          <div className="mb-1">
+            <label htmlFor="exampleInputNumber1" className="form-label">
+              Mobile Number
+            </label>
+            <input
+              type="number"
+              className="form-control"
+              id="exampleInputNumber1"
+              name="number"
+              value={credentials.number}
+              onChange={onchange}
+            />
+          </div>
+          <div className="mb-1" >
+            <label htmlFor="exampleInputaadharNumber1" className="form-label">
+              Aadhar Number
+            </label>
+            <input
+              type="aadharnumber"
+              className="form-control"
+              id="exampleInputaadharNumber1"
+              name="aadharnumber"
+              value={credentials.aadharnumber}
+              onChange={onchange}
+            />
           </div>
         </div>
-        <div className="mb-3 my-4">
+        <div className="mb-2">
+          <label htmlFor="exampleInputcropsname1" className="form-label">
+            Crops you grow
+          </label>
+          <input
+            type="cropsname"
+            className="form-control"
+            id="exampleInputcropsname1"
+            name="cropsname"
+            value={credentials.cropsname}
+            onChange={onchange}
+          />
+        </div>
+        <div className="mb-2">
           <label htmlFor="exampleInputPassword1" className="form-label">
             Password
           </label>
@@ -106,7 +179,7 @@ export default function Signup(props) {
             onChange={onchange}
           />
         </div>
-        <button type="submit" className="btn btn-primary my-4">
+        <button type="submit" className="btn btn-primary my-2">
           SignUp
         </button>
         <Link to="/login" style={{ textDecoration: "none" }}>
