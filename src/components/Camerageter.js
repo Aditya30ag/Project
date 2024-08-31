@@ -54,14 +54,16 @@ const PlantDiseaseDetection = () => {
             });
     };
     return (
-        <div style={{ textAlign: 'center', marginTop: '100px',marginLeft: '300px',borderRadius:"8px" ,paddingTop:"20px",width:"800px",backgroundColor:"#E4F1E8"}}>
+        <div style={{ height:"780px",width:"100%",background:"linear-gradient(360deg,#208420,white)"}}>
+        <div style={{ textAlign: 'center', marginTop: '100px',marginLeft: '280px',borderRadius:"8px" ,paddingTop:"20px",width:"800px",backgroundColor:"#E4F1E8",border:"2px solid black"}}>
             <h1>Plant Disease Detection</h1>
-            <video ref={videoRef} width="320" height="240" autoPlay style={{ border: '1px solid #ddd', marginTop: '20px' }}></video>
-            <canvas ref={canvasRef} width="320" height="240" style={{ border: '1px solid #ddd', margin: '10px' }}></canvas><br />
+            <video ref={videoRef} width="320" height="240" autoPlay style={{ border: '1px solid #ddd', marginTop: '20px',border:"2px solid green",marginRight:"5px"}}></video>
+            <canvas ref={canvasRef} width="320" height="238" style={{ border: '1px solid #ddd', marginTop: '20px',border:"2px solid green",marginLeft:"5px" }}></canvas><br />
             <button onClick={captureImage} style={{ padding: '10px 20px', margin: '10px', fontSize: '16px', cursor: 'pointer', border:"none",backgroundColor:"#C6F5B5",borderRadius:"8px"}}>Capture Image</button>
             <button onClick={uploadImage} style={{ padding: '10px 20px', margin: '10px', fontSize: '16px', cursor: 'pointer',border:"none",backgroundColor:"#C6F5B5",borderRadius:"8px"}}>Upload and Detect</button>
             {loading && <div id="loading" style={{ marginTop: '20px' }}>Processing...</div>}
-            <div id="result" style={{ marginTop: '20px', fontWeight: 'bold' }}>{result}</div>
+        </div>
+        <div className="container" style={{backgroundColor:"#E4F1E8",borderRadius:"20px",border:"2px solid black",marginTop:"10px"}}><div id="result" style={{ fontWeight: 'bold' }}>{result}</div></div>
         </div>
     );
 };

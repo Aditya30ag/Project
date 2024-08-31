@@ -6,7 +6,23 @@ export default function Navbar(props) {
   const navigate=useNavigate();
   const [disable, setdisable] = useState("none");
   const [disable1, setdisable1] = useState("");
+  const[articles,setarticles]=useState("");
+  const[main,setmain]=useState("");
 
+  const updatenews = async () => {
+    let url = `http://api.openweathermap.org/data/2.5/weather?q=New%20Delhi&appid=190dfc4fed3386777429b9d4bc2ed376`;
+    let data = await fetch(url);
+    let response = await data.json();
+    console.log(response);
+    setmain(response.weather[0].main);
+    let temp=response.main.temp-273;
+    let a=temp.toFixed(1);
+    setarticles(a);
+  };
+  useEffect(() => {
+    updatenews();
+    // eslint-disable-next-line
+  }, []);
   const logout = () => {
     localStorage.removeItem("token");
     navigate("/login");
@@ -199,10 +215,11 @@ export default function Navbar(props) {
                 onClick={props.handleonClick2}
                 style={{ fontWeight: "500", display:`${disable1}`}}
               >
-                Contact Us
+                Get-back
               </Link>
             </li>
           </ul>
+          <div><i className="fa-solid fa-cloud" style={{marginRight:"10px"}}></i>{main}  {articles}°C</div>
           {!localStorage.getItem("token") ? (
             <>
               <Link
