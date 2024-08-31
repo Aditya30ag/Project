@@ -36,7 +36,7 @@ export default function Signup(props) {
     console.log(json);
     if (json.success === true) {
       localStorage.setItem("token", json.token);
-      navigate("/");
+      navigate("/home");
       props.showalert();
     } else {
       props.showalert();

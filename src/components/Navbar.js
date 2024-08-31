@@ -1,18 +1,32 @@
-import React, { useState } from "react";
-import { Link,useLocation } from "react-router-dom";
+import React,{useState,useEffect} from "react";
+import { Link,useNavigate,useLocation } from "react-router-dom";
 
 export default function Navbar(props) {
   let location = useLocation();
-  
-  const [disable, setdisable] = useState(false);
+  const navigate=useNavigate();
+  const [disable, setdisable] = useState("none");
+  const [disable1, setdisable1] = useState("");
 
+  const logout = () => {
+    localStorage.removeItem("token");
+    navigate("/login");
+    setdisable("none");
+    setdisable1("");
+    props.showalert();
+  };
+  useEffect(() => {
+    if(localStorage.getItem('token')){
+      setdisable("");
+      setdisable1("none");
+    }
+  }, [location]);
   //code for loading bar
   const a = () => {
     props.handleonClick2();
   };
 
   return (
-    <nav className="navbar navbar-light navbar-expand-lg my-1 linear" style={{position:"fixed",top:"-5px",zIndex:"10",width:"100%",background: "linear-gradient(180deg,#e6ffe6,transparent)"}}>
+    <nav className="navbar navbar-light navbar-expand-lg my-1 linear" style={{position:"fixed",top:"-5px",width:"100%",background: "linear-gradient(180deg,#e6ffe6,transparent)",zIndex:"20"}}>
       <div className="container-fluid mx-4">
         <button
           className="navbar-toggler"
@@ -133,16 +147,18 @@ export default function Navbar(props) {
         >
           <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
             <li className="nav-item mx-4">
-              <Link
-                  className={
-                    location.pathname === "/home" ? "nav-link active" : "nav-link"
-                  }
-                  to="/home"
-                  onClick={a}
-                  style={{ fontWeight: "500" }}
-                >
-                  Home
-                </Link>
+              <button style={{border:"none",backgroundColor:"transparent",display:`${disable}`}}>
+                <Link
+                    className={
+                      location.pathname === "/home" ? "nav-link active" : "nav-link"
+                    }
+                    to="/home"
+                    onClick={a}
+                    style={{ fontWeight: "500" }}
+                  >
+                    Home
+                  </Link>
+                </button>
             </li>
             <li className="nav-item mx-4">
               <Link
@@ -174,14 +190,14 @@ export default function Navbar(props) {
             <li className="nav-item mx-4">
               <Link
                 className={
-                  location.pathname === "/contactus"
+                  location.pathname === "/"
                     ? "nav-link active"
                     : "nav-link"
                 }
                 aria-current="page"
-                to="/contactus"
+                to="/"
                 onClick={props.handleonClick2}
-                style={{ fontWeight: "500" }}
+                style={{ fontWeight: "500", display:`${disable1}`}}
               >
                 Contact Us
               </Link>
@@ -226,7 +242,7 @@ export default function Navbar(props) {
                 }
                 aria-current="page"
                 to="/"
-                onClick={a}
+                onClick={logout}
                 style={{ fontWeight: "500" }}
               >
                 Logout

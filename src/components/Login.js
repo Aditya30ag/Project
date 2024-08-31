@@ -23,7 +23,7 @@ export default function Login(props) {
     const json = await response.json();
     if (json.success === true) {
       localStorage.setItem("token", json.token);
-      navigate("/");
+      navigate("/home");
       props.showalert();
     } else {
       props.showalert();
@@ -33,12 +33,12 @@ export default function Login(props) {
   };
   const onchange = (e) => {
     setcredential({ ...credentials, [e.target.name]: e.target.value });
-    if (password.value.length === 0) {
-      password.style.border = "";
-      setcontent("");
-    } else {
-      
-    }
+    //if (password.value.length === 0) {
+    //  password.style.border = "";
+    //  setcontent("");
+    //} else {
+    //  
+    //}
   };
   return (
     <div className="container" style={{width:"100%",display:"flex",justifyContent:"center",alignItems:"center",marginTop:"150px",position:"fixed",left:"128px",zIndex:"10"}}>
@@ -62,6 +62,7 @@ export default function Login(props) {
           <div>
             <h2 style={{marginLeft:"5px"}}>Login into a account<img style={{height:"50px",borderRadius:"50%",marginLeft:"80px"}} src="/logo.jpg" alt="Description" /></h2>
             <label htmlFor="exampleInputEmail1" className="form-label">
+              
               Email address
             </label>
             <input
