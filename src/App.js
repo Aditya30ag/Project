@@ -15,6 +15,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Alert from './components/Alert';
 import Welcomecontent from './components/Welcomecontent';
 import Camerageter from './components/Camerageter';
+import App3 from './components/App3';
 
 function App() {
   document.body.style.backgroundColor="linear-gradient(white,#E0F8E7)";
@@ -58,7 +59,7 @@ function App() {
     element:<><Navbar showalert={showalert} handleonClick2={handleonClick2} click={click} handleonclicklogin={ handleonclicklogin} /><LoadingBar
       color='black'
       progress={progress}
-      /><Main/><Footer/></>
+      /><Main/><App3/><Footer/></>
     },
     {
       path:"/about",

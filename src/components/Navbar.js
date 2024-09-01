@@ -13,7 +13,6 @@ export default function Navbar(props) {
     let url = `http://api.openweathermap.org/data/2.5/weather?q=New%20Delhi&appid=190dfc4fed3386777429b9d4bc2ed376`;
     let data = await fetch(url);
     let response = await data.json();
-    console.log(response);
     setmain(response.weather[0].main);
     let temp=response.main.temp-273;
     let a=temp.toFixed(1);
@@ -42,7 +41,7 @@ export default function Navbar(props) {
   };
 
   return (
-    <nav className="navbar navbar-light navbar-expand-lg my-1 linear" style={{position:"fixed",top:"-5px",width:"100%",background: "linear-gradient(180deg,#e6ffe6,transparent)",zIndex:"20"}}>
+    <nav className="navbar navbar-light navbar-expand-lg my-1 linear" style={{position:"fixed",top:"-5px",width:"100%",background: "linear-gradient(180deg,#e6ffe6,transparent)",zIndex:"20",fontSize:"20px"}}>
       <div className="container-fluid mx-4">
         <button
           className="navbar-toggler"
@@ -215,7 +214,7 @@ export default function Navbar(props) {
                 onClick={props.handleonClick2}
                 style={{ fontWeight: "500", display:`${disable1}`}}
               >
-                Get-back
+                <i className="fa-solid fa-arrow-left"></i>
               </Link>
             </li>
           </ul>
@@ -231,7 +230,7 @@ export default function Navbar(props) {
                 aria-current="page"
                 to="/Login"
                 onClick={a}
-                style={{ fontWeight: "500" }}
+                style={{ fontWeight: "500" ,marginLeft:"20px"}}
               >
                 Login
               </Link>

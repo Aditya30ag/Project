@@ -29,3 +29,17 @@ async def predict(file: UploadFile = File(...)):
 
     # Return the result as a JSON response
     return {"prediction":result}
+
+# Use a pipeline as a high-level helper
+from transformers import pipeline
+
+pipe = pipeline("image-classification", model="linkanjarad/mobilenet_v2_1.0_224-plant-disease-identification")
+from PIL  import Image
+
+#handling the image
+img = Image.open(r"C:\Users\dpand\Desktop\crop disease_0\train\Apple_Black_rot\00e909aa-e3ae-4558-9961-336bb0f35db3_JR_FrgE.S 8593_270deg.JPG")
+# Classify the image
+result = pipe(img)
+
+# Print the classification result
+print(result)

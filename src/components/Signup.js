@@ -40,14 +40,14 @@ export default function Signup(props) {
       props.showalert();
     } else {
       props.showalert();
-      password.style.border = "1px solid red";
-      setcontent("User with this Email is already exist");
+      //password.style.border = "1px solid red";
+      //setcontent("User with this Email is already exist");
     }
   };
   const onchange = (e) => {
     setcredential({ ...credentials, [e.target.name]: e.target.value });
-    password.style.border = "";
-    setcontent("");
+    //password.style.border = "";
+    //setcontent("");
   };
   return (
     <>
@@ -141,7 +141,7 @@ export default function Signup(props) {
           </div>
           <div className="mb-1" >
             <label htmlFor="exampleInputaadharNumber1" className="form-label">
-              Aadhar Number
+              Pan Number
             </label>
             <input
               type="aadharnumber"

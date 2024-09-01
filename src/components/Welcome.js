@@ -6,7 +6,7 @@ export default function Welcome() {
     <div>
       <Carousel fade>
         <Carousel.Item>
-        <img src="/img1.jpg" alt="error" height="740px" width="100%" style={{opacity: "0.8"}}></img>
+        <img src="/anuty.jpg" alt="error" height="740px" width="100%" style={{opacity: "0.8"}}></img>
           <Carousel.Caption>
             
           </Carousel.Caption>
