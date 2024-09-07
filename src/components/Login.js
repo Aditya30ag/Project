@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
 export default function Login(props) {
+
   const [credentials, setcredential] = useState({ email: "", password: "" });
   const navigate = useNavigate();
   const [content, setcontent] = useState("");
@@ -41,13 +41,13 @@ export default function Login(props) {
     //}
   };
   return (
-    <div className="container" style={{width:"100%",display:"flex",justifyContent:"center",alignItems:"center",marginTop:"150px",position:"fixed",left:"128px",zIndex:"10"}}>
+    <div className="container" style={{width:"100%",display:"flex",justifyContent:"center",alignItems:"center",marginTop:"150px",position:"fixed",left: "50%",transform: "translateX(-50%)",zIndex:"10"}}>
       <div
         className="container"
         style={{
           marginTop: "20px",
-          width: "500px",
-          height: "400px",
+          maxWidth: "500px",
+          minHeight: "400px",
           border: "2px solid #EAEAEA",
           boxSizing: "border-box",
           paddingTop: "40px",

@@ -51,7 +51,7 @@ export default function Signup(props) {
   };
   return (
     <>
-    <div className="container" style={{display:"flex",justifyContent:"center",alignItems:"cenetr",marginTop:"80px",marginBottom:"40px",position:"fixed",left:"128px",zIndex:"10"}}>
+    <div className="container" style={{display:"flex",justifyContent:"center",alignItems:"cenetr",marginTop:"80px",marginBottom:"40px",position:"fixed",left: "50%",transform: "translateX(-50%)",zIndex:"10"}}>
     <div
       className="container"
       style={{
@@ -65,7 +65,7 @@ export default function Signup(props) {
         boxShadow: "0px 10px 25px #000",
         zIndex:"1",
         backgroundColor:"whitesmoke",//#E4F1E8
-          opacity:"0.8",
+        opacity:"0.8",
         fontSize:"15px",
         fontWeight:"700",
         display:"flex",
@@ -76,8 +76,9 @@ export default function Signup(props) {
         <div
           className="mb-1 my-3"
         >
-          <div>
-          <h2>Create an account <img style={{height:"50px",borderRadius:"50%",marginLeft:"140px"}} src="/logo.jpg" alt="Description" /></h2>
+          <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",flexDirection:"row"}}>
+          <h2>Create an account </h2>
+          <img style={{height:"50px",borderRadius:"50%"}} src="/logo.jpg" alt="Description" />
           </div>
           <div className="mb-1" style={{display:"flex",justifyContent:"space-between"}}>
             <div>
