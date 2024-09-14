@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 
-const PlantDiseaseDetection = () => {
+const Camerageter = () => {
   const diseases = [
     { plant: "Apple", name: "Apple Scab", cure: "Apply fungicides like captan or myclobutanil." },
     { plant: "Apple", name: "Apple Black Rot", cure: "Prune infected areas and apply fungicides." },
@@ -59,7 +59,7 @@ const PlantDiseaseDetection = () => {
       const formData = new FormData();
       formData.append('file', blob, 'plant_image.jpg');
 
-      fetch('http://10.12.37.12:8000/predict/', {
+      fetch('http://10.12.25.213:8000/predict/', {
         method: 'POST',
         body: formData
       })
@@ -92,21 +92,54 @@ const PlantDiseaseDetection = () => {
   };
 
   return (
-    <div style={{ height: "640px", width: "100%", background: "linear-gradient(360deg,#208420,white)" }}>
-      <div style={{ textAlign: 'center', marginTop: '100px', marginLeft: '280px', borderRadius: "8px", paddingTop: "20px", width: "800px", backgroundColor: "#E4F1E8", border: "2px solid black" }}>
+    <div style={{ height: "100vh", width: "100%", background: "linear-gradient(360deg,#208420,white)",paddingTop:"130px" }}>
+      <div style={{
+        textAlign: 'center',
+        margin: 'auto',
+        borderRadius: "8px",
+        padding: "20px",
+        maxWidth: "90%",
+        backgroundColor: "#E4F1E8",
+        border: "2px solid black",
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center'
+      }}>
         <h1>Plant Disease Detection</h1>
-        <video ref={videoRef} width="320" height="240" autoPlay style={{ marginTop: '20px', border: "2px solid green", marginRight: "5px" }}></video>
-        <canvas ref={canvasRef} width="320" height="240" style={{ marginTop: '20px', border: "2px solid green", marginLeft: "5px" }}></canvas><br />
-        <button onClick={captureImage} style={{ padding: '10px 20px', margin: '10px', fontSize: '16px', cursor: 'pointer', border: "none", backgroundColor: "#C6F5B5", borderRadius: "8px" }}>Capture Image</button>
-        <button onClick={uploadImage} style={{ padding: '10px 20px', margin: '10px', fontSize: '16px', cursor: 'pointer', border: "none", backgroundColor: "#C6F5B5", borderRadius: "8px" }}>Upload and Detect</button>
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '10px' }}>
+          <video ref={videoRef} width="320" height="240" autoPlay style={{ border: "2px solid green" }}></video>
+          <canvas ref={canvasRef} width="320" height="240" style={{ border: "2px solid green" }}></canvas>
+        </div>
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '10px', marginTop: '20px' }}>
+          <button onClick={captureImage} style={{ padding: '10px 20px', fontSize: '16px', cursor: 'pointer', border: "none", backgroundColor: "#C6F5B5", borderRadius: "8px" }}>Capture Image</button>
+          <button onClick={uploadImage} style={{ padding: '10px 20px', fontSize: '16px', cursor: 'pointer', border: "none", backgroundColor: "#C6F5B5", borderRadius: "8px" }}>Upload and Detect</button>
+        </div>
         {loading && <div id="loading" style={{ marginTop: '20px' }}>Processing...</div>}
       </div>
-      <div style={{ height: "40px", width: "600px", backgroundColor: "#E4F1E8", borderRadius: "20px", border: "2px solid black", marginTop: "10px", marginLeft: "380px", paddingTop: "6px", textAlign: "center" }}>
+      <div style={{
+        height: "40px",
+        maxWidth: "90%",
+        backgroundColor: "#E4F1E8",
+        borderRadius: "20px",
+        border: "2px solid black",
+        margin: "10px auto",
+        paddingTop: "6px",
+        textAlign: "center"
+      }}>
         <div id="result" style={{ fontWeight: 'bold' }}>{result}</div>
-        <div style={{height:"30px",marginTop:"40px",backgroundColor:"white",opacity:"0.8",borderRadius:"8px",border:"2px solid black",fontWeight:"600"}}>Cure:  {result1}</div>
+        <div style={{
+          height: "30px",
+          marginTop: "40px",
+          backgroundColor: "white",
+          opacity: "0.8",
+          borderRadius: "8px",
+          border: "2px solid black",
+          fontWeight: "600"
+        }}>Cure: {result1}</div>
       </div>
     </div>
   );
+  
 };
 
-export default PlantDiseaseDetection;
+export default Camerageter;

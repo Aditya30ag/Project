@@ -1,4 +1,4 @@
-import React from 'react'
+/*import React from 'react'
 
 export default function About() {
   return (
@@ -31,4 +31,47 @@ export default function About() {
     </>
     
   )
+}*/
+import React from 'react';
+
+export default function About() {
+  return (
+    <>
+      <div style={{ height: "83.5vh", width: "100%", marginTop: "50px", overflowY: "scroll", scrollbarWidth: "none" }}>
+        <div style={{ width: "100%", height: "auto", backgroundColor: "grey", display: "flex", flexWrap: "wrap" }}>
+          <div style={{ flex: "1 1 50%", backgroundColor: "black" }}>
+            <img src="/aboutimg1.png" alt="err" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+          </div>
+          <div style={{ flex: "1 1 50%", backgroundColor: "white", padding: "10px" }}>
+            <h2 style={{ marginTop: "20px", textAlign: "center" }}>We are a team of passionate agricultural scientists</h2>
+            <p style={{ textAlign: "center", color: "black", fontFamily: "sans-serif", marginTop: "20px" }}>
+              AI engineers, and data analysts committed to transforming the agricultural industry through innovative technology. Our mission is to empower farmers and agricultural businesses with cutting-edge tools to improve crop health, increase yield, and promote sustainable farming practices.
+            </p>
+          </div>
+        </div>
+        <div style={{ width: "100%", height: "auto", backgroundColor: "grey", display: "flex", flexWrap: "wrap" }}>
+          <div style={{ flex: "1 1 50%", backgroundColor: "white", padding: "10px" }}>
+            <h2 style={{ marginTop: "20px", textAlign: "center" }}>Our AI-based Crop Disease Detection Management System</h2>
+            <p style={{ textAlign: "center", color: "black", fontFamily: "sans-serif", marginTop: "20px" }}>
+              Harnesses the power of machine learning and computer vision to identify crop diseases with high accuracy. By providing early warnings and actionable insights, we help farmers take timely action to mitigate risks and optimize their crop management strategies.
+            </p>
+          </div>
+          <div style={{ flex: "1 1 50%", backgroundColor: "black" }}>
+            <img src="/aboutimg2.jpg" alt="err" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+          </div>
+        </div>
+        <div style={{ width: "100%", height: "auto", backgroundColor: "grey", display: "flex", flexWrap: "wrap" }}>
+          <div style={{ flex: "1 1 50%", backgroundColor: "black" ,flexWrap: "wrap" }}>
+            <img src="/aboutimg3.jpg" alt="err" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+          </div>
+          <div style={{ flex: "1 1 50%", backgroundColor: "white", padding: "10px" }}>
+            <h2 style={{ marginTop: "20px", textAlign: "center" }}>Our platform is user-friendly</h2>
+            <p style={{ textAlign: "center", color: "black", fontFamily: "sans-serif", marginTop: "20px" }}>
+              Scalable, and designed to be accessible to everyone, from small-scale farmers to large agricultural enterprises. We believe that technology can revolutionize agriculture, and we are here to make that a reality.
+            </p>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }

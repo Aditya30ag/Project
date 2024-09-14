@@ -94,10 +94,9 @@ code {
   }
 }
 
-@media (max-width: 480px) {
+@media (width: 390px) {
   .welcome-container {
-    top: 80px;
-    left: 50%;
+    padding-top:"500px";
     transform: translateX(-50%);
   }
 
@@ -114,5 +113,24 @@ code {
   .welcome-btn {
     height: 30px;
     width: 100px;
+  }
+}
+
+.buy-now-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index:"200"
+}
+
+.buy-now-button:hover {
+  background-color: #45a049;
+}
+@media (max-width: 768px) {
+  div[style*="flex: 1 1 50%"] {
+    flex: 1 1 100%;
   }
 }

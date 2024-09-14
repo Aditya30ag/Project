@@ -8,6 +8,7 @@ import LoadingBar from 'react-top-loading-bar';
 import About from './components/About';
 import Services from './components/Services';
 import Footer from './components/Footer';
+import Footer2 from './components/Footer2';
 import Welcome from './components/Welcome';
 import Main from './components/Main';
 import Market from './components/Market';
@@ -17,6 +18,7 @@ import Welcomecontent from './components/Welcomecontent';
 import Camerageter from './components/Camerageter';
 import App3 from './components/App3';
 import BuyNow from './components/BuyNow';
+import Upload from './components/Upload';
 
 function App() {
   const notes = [
@@ -70,7 +72,7 @@ function App() {
     element:<><Navbar showalert={showalert} handleonClick2={handleonClick2} click={click} handleonclicklogin={ handleonclicklogin} /><LoadingBar
       color='black'
       progress={progress}
-      /><Main/><App3/><Footer/></>
+      /><Main/><App3/><Footer2/></>
     },
     {
       path:"/about",
@@ -78,6 +80,13 @@ function App() {
       color='black'
       progress={progress}
       /><About/><Footer/></>
+    },
+    {
+      path:"/upload",
+      element:<><Navbar showalert={showalert} handleonClick2={handleonClick2} click={click} handleonclicklogin={ handleonclicklogin} /><LoadingBar
+      color='black'
+      progress={progress}
+      /><Upload/><Footer2/></>
     },
     {
       path:"/services",
@@ -102,7 +111,7 @@ function App() {
       element:<><Navbar showalert={showalert} handleonClick2={handleonClick2} click={click} handleonclicklogin={ handleonclicklogin} /><LoadingBar
       color='black'
       progress={progress}
-      /><BuyNow/><Footer/></>
+      /><BuyNow/><Footer2/></>
     },
     {
       path:"/camerageter",

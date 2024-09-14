@@ -1,5 +1,5 @@
 import React, {useRef, useState} from "react";
-import {Navigate, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import Modal from "./Modal";
 import Mainmarket from "./Mainmarket";
 //import { Link} from "react-router-dom";

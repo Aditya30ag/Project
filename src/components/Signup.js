@@ -12,7 +12,7 @@ export default function Signup(props) {
     password: "",
   });
   const [content, setcontent] = useState("");
-  const password = document.querySelector("#exampleInputEmail1");
+  //const password = document.querySelector("#exampleInputEmail1");
   const navigate = useNavigate();
   const handleonClick = async (e) => {
     e.preventDefault();
@@ -41,7 +41,7 @@ export default function Signup(props) {
     } else {
       props.showalert();
       //password.style.border = "1px solid red";
-      //setcontent("User with this Email is already exist");
+      setcontent("User with this Email is already exist");
     }
   };
   const onchange = (e) => {

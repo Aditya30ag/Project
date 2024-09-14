@@ -41,7 +41,7 @@ export default function Navbar(props) {
   };
 
   return (
-    <nav className="navbar navbar-light navbar-expand-lg my-1 linear" style={{position:"fixed",top:"-5px",width:"100%",background: "linear-gradient(180deg,#e6ffe6,transparent)",zIndex:"20",fontSize:"20px"}}>
+    <nav className="navbar navbar-light navbar-expand-lg my-1 linear" style={{position:"fixed",top:"-5px",width:"100%",background: "linear-gradient(180deg,#e6ffe6,transparent)",zIndex:"90",fontSize:"20px"}}>
       <div className="container-fluid mx-4">
         <button
           className="navbar-toggler"
