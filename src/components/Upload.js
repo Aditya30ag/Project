@@ -38,8 +38,8 @@ function App() {
 
   return (
     <div className="App" style={{marginTop:"150px"}}>
-      <h1>Upload and Scan Image</h1>
-      <input type="file" onChange={handleChange} accept="image/*" />
+      <h1 className="styled-text">Upload a image here</h1>
+      <div><input id="dynamicInput" type="file" onChange={handleChange} accept="image/*" /></div>
       {file && <img src={file} alt="Preview" style={{ maxWidth: '100%', maxHeight: '300px', marginTop: '20px' }} />}
     </div>
   );
