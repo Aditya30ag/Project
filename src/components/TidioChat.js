@@ -1,28 +1,40 @@
-import { useEffect } from 'react';
+import React, { useEffect } from "react";
 
 const TidioChat = () => {
   useEffect(() => {
-    const loadTidioScript = () => {
-      if (document.getElementById('tidio-script')) return;
-
-      const script = document.createElement('script');
-      script.src = '//code.tidio.co/pevyscxnhqid7r8qaj7zybnxm0h0lryp.js';
-      script.async = true;
-      script.id = 'tidio-script';
-      document.body.appendChild(script);
+    // Embedded chatbot config
+    window.embeddedChatbotConfig = {
+      chatbotId: "KQsKTS8teAiF4IAdFC8vP",
+      domain: "www.chatbase.co",
     };
 
-    loadTidioScript();
+    // Create script element
+    const script = document.createElement("script");
+    script.src = "https://www.chatbase.co/embed.min.js";
+    script.async = true;
+    script.defer = true;
+    script.setAttribute("chatbotId", "WFstMZKdEyyuwbjxfxKei");
+    script.setAttribute("domain", "www.chatbase.co");
 
+    // Append script to the document body
+    document.body.appendChild(script);
+
+    // Cleanup function to remove the script when the component is unmounted
     return () => {
-      const tidioScript = document.getElementById('tidio-script');
-      if (tidioScript) {
-        tidioScript.remove();
-      }
+      document.body.removeChild(script);
     };
-  }, []);
+  }, []); // Empty dependency array to ensure this runs only on mount/unmount
 
-  return null;
+  return (
+    <div style={{ width: "100%", height: "100%", minHeight: "700px" }}>
+      {/* <iframe
+        src="https://www.chatbase.co/chatbot-iframe/WFstMZKdEyyuwbjxfxKei"
+        width="100%"
+        style={{ height: "100%", minHeight: "700px" }}
+        frameBorder="0"
+      ></iframe> */}
+    </div>
+  );
 };
 
 export default TidioChat;
