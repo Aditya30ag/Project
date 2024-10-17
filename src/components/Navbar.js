@@ -190,6 +190,18 @@ export default function Navbar(props) {
             <li className="nav-item mx-4">
               <Link
                 className={
+                  location.pathname === "/market" ? "nav-link active" : "nav-link"
+                }
+                to="/about"
+                onClick={a}
+                style={{ fontWeight: "500" }}
+              >
+                Live your market
+              </Link>
+            </li>
+            <li className="nav-item mx-4">
+              <Link
+                className={
                   location.pathname === "/services"
                     ? "nav-link active"
                     : "nav-link"
@@ -202,6 +214,7 @@ export default function Navbar(props) {
                 Services
               </Link>
             </li>
+            
             <li className="nav-item mx-4">
               <Link
                 className={
